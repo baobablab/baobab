@@ -30,9 +30,6 @@ permalink: /bibliography/other
         {% else %}
             {{entry.author}}: {{entry.title}} ({{entry.year}})
         {% endif %}
-        {% if entry.url %}
-          <a href="{{entry.url}}" class="icon fa-cloud-download" target="_blank"><span class="label">Paper</span></a>
-        {% endif %}
         {% if entry.doi %}
           <a href="http://doi.org/{{entry.doi}}" class="icon fa-500px" target="_blank"><span class="label">DOI</span></a>
         {% endif %}

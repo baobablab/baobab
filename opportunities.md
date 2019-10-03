@@ -42,7 +42,7 @@ Intership, PhD, PostDoc or engineer positions are offered in the project. Do not
             {% if job.ext_url %}
               <a href="{{job.ext_url}}" class="icon fa-cloud-download" target="_blank"><span class="label">Job</span></a>
             {% elsif job.pdf %}
-              <a href="/images/opportunities/{{job.pdf}}" class="icon fa-cloud-download" target="_blank"><span class="label">Job</span></a>
+              <a href="{{site.url}}/{{site.baseurl}}/images/opportunities/{{job.pdf}}" class="icon fa-cloud-download" target="_blank"><span class="label">Job</span></a>
             {% else %}
               <a href="mailto:{{site.email}}" class="icon fa-envelope-square" target="_blank"><span class="label">Job</span></a>
             {% endif %}

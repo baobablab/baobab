@@ -37,7 +37,7 @@ in different institutions & companies.
     <div class="list-item-people">
       <p class="list-post-title">
         {% if collab.avatar %}
-            <a href="{{collab.ext_url}}"><img width="200" src="/images/collaborators/{{collab.avatar}}"></a>
+            <a href="{{collab.ext_url}}"><img width="200" src="{{site.url}}/{{site.baseurl}}/images/collaborators/{{collab.avatar}}"></a>
         {% else %}
             <a href="{{collab.ext_url}}"><img width="200" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg"></a>
         {% endif %}
