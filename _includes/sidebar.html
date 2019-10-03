@@ -1,0 +1,83 @@
+<!-- Sidebar -->
+  <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+          <form method="post" action="#">
+            <input type="text" name="query" id="query" placeholder="Search" />
+          </form>
+        </section>
+
+        <!-- Menu -->
+        {% assign today = site.time | date: '%Y' %}
+        {% assign year = today | minus: 4 %}
+        {% assign research_sorted = (site.research | sort: 'cat' %}
+        {% assign unique_cats = '' | split: ',' %}
+        {% for research in research_sorted %}
+          <!-- If not equal to previous then it must be unique as sorted -->
+          {% unless research.cat == previous %}
+            {% assign unique_cats = unique_cats | push: research.cat %}
+          {% endunless %}
+          {% assign previous = research.cat %}
+        {% endfor %}
+        <nav id="menu">
+          <header class="major">
+            <h2>Menu</h2>
+          </header>
+          <ul>
+            <li><a href="{{ '/' | absolute_url }}">Homepage</a></li>
+            <li>
+              <span class="opener">Research</span>
+              <ul>
+                {% for cat in unique_cats %}
+                  <li><a href="{{site.baseurl}}/research/{{cat}}">{{cat}}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li>
+              <span class="opener">Publications</span>
+              <ul>
+                <li><a href="{{ site.baseurl }}/bibliography/selected.html">Selection</a></li>
+                <li><a href="{{ site.baseurl }}/bibliography/other.html">Present-{{year}}</a></li>
+              </ul>
+            </li>
+            <li><a href="{{ site.baseurl }}/people/">Members</a></li>
+            <li><a href="{{ site.baseurl }}/collaborators/">Collaborators</a></li>
+            <li><a href="{{site.baseurl}}/opportunities/">Opportunities</a></li>
+          </ul>
+        </nav>
+
+        <!-- Search -->
+        {% assign today = site.time | date: '%s' %}
+        {% assign news_sorted = (site.news | sort: 'date' | reverse %}
+        <section id="search" class="alt">
+          <header class="major">
+            <h2>News & Events</h2>
+          </header>
+          <ul>
+              {% for news in news_sorted %}
+                {% assign start = news.date | date: '%s' %}
+                {% assign seconds_since = today | minus: start %}
+                {% assign hours_since = seconds_since | divided_by: 60 | divided_by: 60 %}
+                {% assign days_since = hours_since | divided_by: 24 %}
+                {% if days_since < site.expiration_news %}
+                  {% if news.ext_url %}
+			        <li><a href="{{news.ext_url}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
+                  {% elsif news.page %}
+			        <li><a href="{{site.baseurl}}/{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
+                  {% else %}
+			        <li><a>{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+          </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright"><a href="{{ site.baseurl }}/mentionslegales.html">Legal disclaimer</a></p>
+        </footer>
+
+    </div>
+  </div>
