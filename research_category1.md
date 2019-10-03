@@ -30,11 +30,11 @@ permalink: /research/category1/
 {% for research in research_sorted %}
   {% if research.subcat == subcat %}
     <article>
-        <a href="{{ site.baseurl }}{{ research.url }}" class="image"><img src="{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
+        <a href="{{ research.url }}" class="image"><img src="images/research/{{research.icon}}" alt="" /></a>
         <h3>{{ research.title }}</h3>
         <p>{{ research.teasing }}...</p>
         <ul class="actions">
-            <li><a href="{{ site.baseurl }}{{ research.url }}" class="button medium">More</a></li>
+            <li><a href="{{ research.url }}" class="button medium">More</a></li>
         </ul>
     </article>
   {% endif %}

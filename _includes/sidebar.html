@@ -65,7 +65,7 @@
                   {% if news.ext_url %}
 			        <li><a href="{{news.ext_url}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% elsif news.page %}
-			        <li><a href="{{site.baseurl}}/{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
+			        <li><a href="{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% else %}
 			        <li><a>{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% endif %}
@@ -76,7 +76,7 @@
 
         <!-- Footer -->
         <footer id="footer">
-          <p class="copyright"><a href="{{ site.baseurl }}/mentionslegales.html">Legal disclaimer</a></p>
+          <p class="copyright"><a href="mentionslegales.html">Legal disclaimer</a></p>
         </footer>
 
     </div>
