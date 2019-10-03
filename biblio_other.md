@@ -5,7 +5,7 @@ permalink: /bibliography/other
 ---
 
 
-## Publications of the {{site.title}} group
+<h2> Publications of the {{site.title}} group </h2>
 
 {% assign today = site.time | date: '%Y' %}
 {% assign biblio_sorted = (site.biblio | sort: 'year' | reverse %}

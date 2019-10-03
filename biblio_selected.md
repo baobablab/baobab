@@ -4,7 +4,7 @@ layout: page
 permalink: /bibliography/selected
 ---
 
-## Selected publications of the {{site.title}} group
+<h2> Selected publications of the {{site.title}} group </h2>
 
 {% assign today = site.time | date: '%Y' %}
 {% assign biblio_sorted = (site.biblio | sort: 'year' | reverse %}

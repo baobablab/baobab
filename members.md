@@ -31,7 +31,7 @@ permalink: /people/
     <div class="list-item-people">
       <p class="list-post-title">
         {% if profile.avatar %}
-            <a href="{{ profile.url }}"><img width="200" src="images/people/{{profile.avatar}}"></a>
+            <a href="{{ profile.url }}"><img width="200" src="/images/people/{{profile.avatar}}"></a>
         {% else %}
             <a href="{{ profile.url }}"><img width="200" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg"></a>
         {% endif %}
