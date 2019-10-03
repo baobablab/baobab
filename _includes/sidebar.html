@@ -65,7 +65,7 @@
                   {% if news.ext_url %}
 			        <li><a href="{{news.ext_url}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% elsif news.page %}
-			        <li><a href="{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
+			        <li><a href="{{site.url}}/{{site.baseurl}}/{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% else %}
 			        <li><a>{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% endif %}
