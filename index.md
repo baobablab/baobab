@@ -5,6 +5,9 @@ layout: default
 {% assign research_sorted = (site.research | sort: 'added' | reverse  %}
 
 <!-- Section -->
+1 {{ site.baseurl }} <br/>
+2 {{ site.url }} <br/>
+3 {{ application.url }} <br/>
 <section>
     <header class="major">
       <h2>Gallery</h2>
