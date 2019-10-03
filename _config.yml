@@ -2,8 +2,8 @@
 # Site settings
 title: TeamName
 subtitle: Team slogan
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: web-template
+url:
 
 # Contacts
 email: last.first@cea.fr
