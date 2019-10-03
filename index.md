@@ -12,7 +12,7 @@ layout: default
     <div class="posts">
     {% for research in research_sorted limit: 6 %}
       <article>
-        <a href="{{ research.url }}" class="image"><img src="/images/research/{{research.icon}}" alt="" /></a>
+        <a href="{{site.url}}{{site.baseurl}}{{research.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
         <h3>{{ research.title }}</h3>
         <p>{{ research.teasing }}...</p>
         <ul class="actions">

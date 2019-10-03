@@ -31,20 +31,20 @@
               <span class="opener">Research</span>
               <ul>
                 {% for cat in unique_cats %}
-                  <li><a href="research/{{cat}}">{{cat}}</a></li>
+                  <li><a href="{{site.url}}/{{site.baseurl}}/research/{{cat}}">{{cat}}</a></li>
                 {% endfor %}
               </ul>
             </li>
             <li>
               <span class="opener">Publications</span>
               <ul>
-                <li><a href="bibliography/selected.html">Selection</a></li>
-                <li><a href="bibliography/other.html">Present-{{year}}</a></li>
+                <li><a href="{{site.url}}/{{site.baseurl}}/bibliography/selected">Selection</a></li>
+                <li><a href="{{site.url}}/{{site.baseurl}}/bibliography/other">Present-{{year}}</a></li>
               </ul>
             </li>
-            <li><a href="people/">Members</a></li>
-            <li><a href="collaborators/">Collaborators</a></li>
-            <li><a href="opportunities/">Opportunities</a></li>
+            <li><a href="{{site.url}}/{{site.baseurl}}/people">Members</a></li>
+            <li><a href="{{site.url}}/{{site.baseurl}}/collaborators">Collaborators</a></li>
+            <li><a href="{{site.url}}/{{site.baseurl}}/opportunities">Opportunities</a></li>
           </ul>
         </nav>
 
@@ -76,7 +76,7 @@
 
         <!-- Footer -->
         <footer id="footer">
-          <p class="copyright"><a href="mentionslegales.html">Legal disclaimer</a></p>
+          <p class="copyright"><a href="{{site.url}}/{{site.baseurl}}/mentionslegales">Legal disclaimer</a></p>
         </footer>
 
     </div>
