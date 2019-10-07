@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Personal nformation**
+**Personal information**
 - First name:
 - Last name:
 
