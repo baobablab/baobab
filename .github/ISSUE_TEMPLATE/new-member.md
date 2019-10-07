@@ -1,8 +1,8 @@
 ---
 name: New member
 about: Add a new member.
-title: "[ADD]"
-labels: ''
+title: ''
+labels: add
 assignees: ''
 
 ---
@@ -21,5 +21,5 @@ assignees: ''
 - Please enter a small biopic with possible extra resources that can be joined.
 
 **Do not forget**
-- You can join an avatar to your profile: /neurospin/xx/avatars/\<LAST\>_\<FIRST\>.png
-- You can join resources for your profile description: /neurospin/xx/profiles/\<LAST\>_\<FIRST\>_\<CUSTOM\>.png
+- Upload an avatar to your profile: \<LAST\>_\<FIRST\>.png
+- Upload the resources of your profile description: \<LAST\>_\<FIRST\>_\<CUSTOM\>.png
