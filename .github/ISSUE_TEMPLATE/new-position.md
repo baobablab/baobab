@@ -2,7 +2,7 @@
 name: New position
 about: Add a new position.
 title: ''
-labels: add
+labels: ''
 assignees: ''
 
 ---
@@ -20,4 +20,3 @@ assignees: ''
 
 **Do not forget**
 - Upload the job description (if applicable): \<YEAR\>_\<CONTACT\>_\<NAME\>.pdf.
-- Upload the

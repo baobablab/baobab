@@ -2,7 +2,7 @@
 name: Update biblio
 about: Update the bibliography
 title: ''
-labels: add
+labels: ''
 assignees: ''
 
 ---
