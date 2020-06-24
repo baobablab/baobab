@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign research_sorted = site.research | where: "subcat", "unit" | sort: 'added' | reverse  %}
+{% assign research_sorted = site.research | where: "subcat", "lab" | sort: "title"  %}
 
 <!-- Section -->
 <section>
