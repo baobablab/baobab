@@ -7,7 +7,7 @@ layout: default
 <!-- Section -->
 <section>
     <header class="major">
-      <h2>Units</h2>
+      <h2>Laboratories</h2>
     </header>
     <noscript>
     <p> Please note that email addresses on this site are protected to avoid abuse by spammers.
