@@ -1,0 +1,64 @@
+##########################################################################
+# NSAp - Copyright (C) CEA, 2019
+# Distributed under the terms of the CeCILL-B license, as published by
+# the CEA-CNRS-INRIA. Refer to the LICENSE file or to
+# http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
+# for details.
+##########################################################################
+
+
+# Imports
+import os
+import argparse
+import subprocess
+import yaml
+
+# Define command line
+doc = """
+Convert BIBTEX to MD.
+Must install first pybtex.
+python bib2md -i test.bib -o out
+"""
+parser = argparse.ArgumentParser(description=doc)
+parser.add_argument(
+    "-i", "--infile",
+    help="the input .bib file.")
+parser.add_argument(
+    "-o", "--outdir",
+    help="the destination folder.")
+args = parser.parse_args()
+
+
+# Convert bib to yaml with pybtex-convert
+bibfile = os.path.join(args.outdir, "bib.yaml")
+cmd = ["pybtex-convert", args.infile,  bibfile]
+subprocess.call(cmd)
+
+
+# Load biblio
+with open(bibfile, "rt") as of:
+    biblio = yaml.safe_load(of)["entries"]
+
+
+# Create single entries
+for key, item in biblio.items():
+    key = key.replace(os.sep, "_")
+    item["author"] = "{0} {1} et al.".format(
+        item["author"][0]["first"],
+        item["author"][0]["last"])
+    md_file = os.path.join(args.outdir, key + ".md")
+    content = ["---"]
+    for _key in ["author", "title", "journal", "year", "type", "url", "doi",
+                 "booktitle", "team"]:
+        value = item.get(_key, None)
+        if value is None:
+            continue
+        for char in ("\n", "{", "}", "\\'", '"'):
+            value = value.replace(char, "")
+        for char in (":", ):
+            value = value.replace(char, " -")
+        content.append("{0}: {1}".format(_key, value))
+    content += ["---"]
+    with open(md_file, "wt") as of:
+        of.write("\n".join(content))
+    
