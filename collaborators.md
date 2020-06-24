@@ -8,7 +8,7 @@ The {{site.title}} team has developped numerous collaborations with colleagues
 in different institutions & companies.
 
 
-{% assign collaborators_sorted = (site.collaborators | sort: 'subcat' %}
+{% assign collaborators_sorted = site.collaborators | sort: 'subcat' %}
 {% assign collaborators_array = '' | split: ',' %}
 {% for collab in collaborators_sorted %}
   <!-- If not equal to previous then it must be unique as sorted -->
@@ -17,7 +17,7 @@ in different institutions & companies.
   {% endunless %}
   {% assign previous = collab.subcat %}
 {% endfor %}
-{% assign collaborators_sorted = (site.collaborators | sort: 'joined' | reverse %}
+{% assign collaborators_sorted = site.collaborators | sort: 'joined' | reverse %}
 
 {% for item in collaborators_array %}
 

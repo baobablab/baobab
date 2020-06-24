@@ -8,7 +8,7 @@ permalink: /bibliography/other
 <h2> Publications of the {{site.title}} group </h2>
 
 {% assign today = site.time | date: '%Y' %}
-{% assign biblio_sorted = (site.biblio | sort: 'year' | reverse %}
+{% assign biblio_sorted = site.biblio | sort: 'year' | reverse %}
 
 {% for idx in (0..4) %}
 

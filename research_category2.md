@@ -9,7 +9,7 @@ permalink: /research/category2/
 <!-- Section -->
 
 {% assign today = site.time | date: '%s' %}
-{% assign research_sorted = (site.research | where: "cat",{{cat}} | sort: 'subcat' %}
+{% assign research_sorted = site.research | where: "cat", cat | sort: 'subcat' %}
 {% assign unique_subcats = '' | split: ',' %}
 {% for research in research_sorted %}
   <!-- If not equal to previous then it must be unique as sorted -->
@@ -18,7 +18,7 @@ permalink: /research/category2/
   {% endunless %}
   {% assign previous = research.subcat %}
 {% endfor %}
-{% assign research_sorted = (site.research | where: "cat",{{cat}} | sort: 'added' | reverse  %}
+{% assign research_sorted = site.research | where: "cat", cat | sort: 'added' | reverse  %}
 
 <h2>{{cat | capitalize}}</h2>
 

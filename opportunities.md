@@ -9,7 +9,7 @@ expiration: 200
 Intership, PhD, PostDoc or engineer positions are offered in the project. Do not hesitate to <a href="mailto:{{site.email}}">contact us.</a>
 
 {% assign today = site.time | date: '%s' %}
-{% assign jobs_sorted = (site.opportunities | sort: 'date' | reverse %}
+{% assign jobs_sorted = site.opportunities | sort: 'date' | reverse %}
 {% assign jobs_array = "phd|postdoc|internship" | split: "|" %}
 
 {% for item in jobs_array %}
