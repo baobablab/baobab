@@ -2,7 +2,7 @@
 name: New collaborator
 about: Add a new collaborator
 title: ''
-labels: add
+labels: ''
 assignees: ''
 
 ---

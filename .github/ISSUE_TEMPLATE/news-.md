@@ -2,7 +2,7 @@
 name: News!
 about: Add a news.
 title: ''
-labels: add
+labels: ''
 assignees: ''
 
 ---
