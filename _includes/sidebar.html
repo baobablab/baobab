@@ -5,14 +5,14 @@
         <!-- Menu -->
         {% assign today = site.time | date: '%Y' %}
         {% assign year = today | minus: 4 %}
-        {% assign research_sorted = (site.research | sort: 'cat' %}
+        {% assign labs_sorted = (site.labs | sort: 'cat' %}
         {% assign unique_cats = '' | split: ',' %}
-        {% for research in research_sorted %}
+        {% for lab in labs_sorted %}
           <!-- If not equal to previous then it must be unique as sorted -->
-          {% unless research.cat == previous %}
-            {% assign unique_cats = unique_cats | push: research.cat %}
+          {% unless lab.cat == previous %}
+            {% assign unique_cats = unique_cats | push: lab.cat %}
           {% endunless %}
-          {% assign previous = research.cat %}
+          {% assign previous = lab.cat %}
         {% endfor %}
         <nav id="menu">
           <header class="major">
@@ -24,7 +24,7 @@
               <span class="opener">Laboratories</span>
               <ul>
                 {% for cat in unique_cats %}
-                  <li><a href="{{site.url}}/{{site.baseurl}}/research/{{cat}}">{{cat}}</a></li>
+                  <li><a href="{{site.url}}/{{site.baseurl}}/labs/{{cat}}">{{cat}}</a></li>
                 {% endfor %}
               </ul>
             </li>

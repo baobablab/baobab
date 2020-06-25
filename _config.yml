@@ -66,3 +66,7 @@ collections:
     output    : true
     permalink : /research/:title/index.html
 
+  labs:
+    output    : true
+    permalink : /labs/:title/index.html
+
