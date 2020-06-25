@@ -32,7 +32,11 @@ Difficulty on insensible reasonable in. From as went he they. Preference themsel
     <div class="posts">
     {% for team in teams_sorted %}
       <article>
-        <a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{team.icon}}" alt="" /></a>
+        {% if team.site %}
+            <a href="{{team.site}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{team.icon}}" alt="" /></a>
+        {% else %}
+            <a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{team.icon}}" alt="" /></a>
+        {% endif %}
         <h3>{{ team.title }}</h3>
         <p>
             <b>Leader: </b>
@@ -42,7 +46,11 @@ Difficulty on insensible reasonable in. From as went he they. Preference themsel
 
         <p>{{ team.teasing }}...</p>
         <ul class="actions">
-            <li><a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="button medium">More</a></li>
+            {% if team.site %}
+                <li><a href="{{team.site}}" class="button medium">More</a></li>
+            {% else %}
+                <li><a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="button medium">More</a></li>
+            {% endif %}
         </ul>
       </article>
     {% endfor %}
