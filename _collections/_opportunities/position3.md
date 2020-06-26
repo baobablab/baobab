@@ -1,9 +1,11 @@
 ---
 layout: page
 title: Tile
-subcat: postdoc
-profile: Candidate profile.
+cat: gaia
+subcat: genetics
+type: postdoc
+profile: Candidate profile (gaia/genetics).
 contact: last.first@cea.fr
 pdf: position.pdf
-date: 2019-06-01
+date: 2020-01-01
 ---

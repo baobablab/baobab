@@ -1,10 +1,12 @@
 ---
 layout: page
 title: Tile
-subcat: internship
-profile: Candidate profile.
+cat: ciel
+subcat: midas
+type: internship
+profile: Candidate profile (ciel/midas).
 contact: last.first@cea.fr
 pdf: position.pdf
-date: 2019-03-01
+date: 2020-03-01
 ---
 

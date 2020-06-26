@@ -6,25 +6,39 @@ permalink: /people/
 
 {% assign people_sorted = site.people | sort: 'joined' %}
 {% assign people_array = "pi|postdoc|gradstudent|engineer|alumni" | split: "|" %}
-{% assign labs_sorted = site.labs | sort: 'cat' %}
+{% assign labs_sorted = site.labs | sort: "cat" %}
 {% assign unique_labs = '' | split: ',' %}
 {% for lab in labs_sorted %}
-  <!-- If not equal to previous then it must be unique as sorted -->
-  {% unless lab.cat == previous %}
-    {% assign unique_labs = unique_labs | push: lab.cat %}
-  {% endunless %}
-  {% assign previous = lab.cat %}
+  {% if lab.subcat == "team" %}
+      {% unless lab.cat == previous %}
+        {% assign key = "~" | append: lab.cat %}
+        {% assign unique_labs = unique_labs | push: key %}
+      {% endunless %}
+      {% assign unique_labs = unique_labs | push: lab.title %}
+      {% assign previous = lab.cat %}
+  {% endif %}
 {% endfor %}
 
 <script>
 $(document).ready(function() {
+    var content = "<option>Choose</option>"
+    {% for lab in unique_labs %}
+        {% if lab contains "~" %}
+            {% assign key = lab | replace: "~", "" %}
+            content += "<option value='{{key|downcase|replace: " ", "-"}}'>{{key|upcase}}</option>"
+        {% else %}
+            content += "<option value='{{lab|downcase|replace: " ", "-"}}'>&nbsp;&nbsp;&nbsp;&nbsp;{{lab|downcase}}</option>"
+        {% endif %}       
+    {% endfor %}
+    $(".dropdown-menu").html(content)
     $(".dropdown-menu").change(function () {
         var lab = this.value;
         {% for lab in unique_labs %}
+            {% assign key = lab | replace: "~", "" %}
             if (lab == "Choose") {
-                $(".{{lab}}").show();
+                $(".{{key|downcase|replace: " ", "-"}}").show();
             } else {
-                $(".{{lab}}").hide();
+                $(".{{key|downcase|replace: " ", "-"}}").hide();
             } 
         {% endfor %}
         $("." + lab).show();
@@ -34,10 +48,6 @@ $(document).ready(function() {
 
 <b> Filter by laboratories:</b>
 <select class="dropdown-menu">
-    <option>Choose</option>
-    <option value="ciel">CIEL</option>
-    <option value="gaia">GAIA</option>
-    <option value="metric">METRIC</option>
 </select>
 
 {% for item in people_array %}
@@ -61,7 +71,7 @@ $(document).ready(function() {
 <div class="content list people">
   {% for profile in people_sorted %}
     {% if profile.position contains item %}
-    <div class="list-item-people {{profile.cat}} {{profile.subcat}}">
+    <div class="list-item-people {{profile.cat|replace: ' ', '-'}} {{profile.subcat|replace: ' ', '-'}}">
       <p class="list-post-title">
         {% if profile.site %}
             <a href="{{ profile.site }}">

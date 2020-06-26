@@ -11,6 +11,49 @@ Intership, PhD, PostDoc or engineer positions are offered in the project. Do not
 {% assign today = site.time | date: '%s' %}
 {% assign jobs_sorted = site.opportunities | sort: 'date' | reverse %}
 {% assign jobs_array = "phd|postdoc|internship" | split: "|" %}
+{% assign labs_sorted = site.labs | sort: "cat" %}
+{% assign unique_labs = '' | split: ',' %}
+{% for lab in labs_sorted %}
+  {% if lab.subcat == "team" %}
+      {% unless lab.cat == previous %}
+        {% assign key = "~" | append: lab.cat %}
+        {% assign unique_labs = unique_labs | push: key %}
+      {% endunless %}
+      {% assign unique_labs = unique_labs | push: lab.title %}
+      {% assign previous = lab.cat %}
+  {% endif %}
+{% endfor %}
+
+<script>
+$(document).ready(function() {
+    var content = "<option>Choose</option>"
+    {% for lab in unique_labs %}
+        {% if lab contains "~" %}
+            {% assign key = lab | replace: "~", "" %}
+            content += "<option value='{{key|downcase|replace: " ", "-"}}'>{{key|upcase}}</option>"
+        {% else %}
+            content += "<option value='{{lab|downcase|replace: " ", "-"}}'>&nbsp;&nbsp;&nbsp;&nbsp;{{lab|downcase}}</option>"
+        {% endif %}       
+    {% endfor %}
+    $(".dropdown-menu").html(content)
+    $(".dropdown-menu").change(function () {
+        var lab = this.value;
+        {% for lab in unique_labs %}
+            {% assign key = lab | replace: "~", "" %}
+            if (lab == "Choose") {
+                $(".{{key|downcase|replace: " ", "-"}}").show();
+            } else {
+                $(".{{key|downcase|replace: " ", "-"}}").hide();
+            } 
+        {% endfor %}
+        $("." + lab).show();
+    });
+});
+</script>
+
+<b> Filter by laboratories:</b>
+<select class="dropdown-menu">
+</select>
 
 {% for item in jobs_array %}
 
@@ -28,13 +71,13 @@ Intership, PhD, PostDoc or engineer positions are offered in the project. Do not
 
 <div class="posts">
   {% for job in jobs_sorted %}
-    {% if job.subcat contains item %}
+    {% if job.type contains item %}
       {% assign start = job.date | date: '%s' %}
       {% assign seconds_since = today | minus: start %}
       {% assign hours_since = seconds_since | divided_by: 60 | divided_by: 60 %}
       {% assign days_since = hours_since | divided_by: 24 %}
       {% if days_since < site.expiration_opportunities %}
-        <article>
+        <article class="{{job.cat|replace: ' ', '-'}} {{job.subcat|replace: ' ', '-'}}">
           <ul>
             <li>{{job.title}}</li>
             <li>{{job.profile}}</li>
