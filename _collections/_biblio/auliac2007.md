@@ -1,4 +1,6 @@
 ---
+cat: gaia
+subcat: genetics
 author: C. Auliac et al.
 title: Learning transcriptional regulatory networks with evolutionary algorithms enhanced with niching
 year: 2007

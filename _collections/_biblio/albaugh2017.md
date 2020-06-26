@@ -1,4 +1,7 @@
 ---
+cat: gaia
+subcat: genetics
+bestof: true
 author: M.D. Albaugh et al.
 title: Inattention and Reaction Time Variability Are Linked to Ventromedial Prefrontal Volume in Adolescents
 journal: Biological Psychiatry

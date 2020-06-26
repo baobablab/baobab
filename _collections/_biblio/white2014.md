@@ -1,4 +1,6 @@
 ---
+cat: gaia
+subcat: genetics
 author: T.P. White et al.
 title: Sex differences in COMT polymorphism effects on prefrontal inhibitory control in adolescence
 journal: Neuropsychopharmacology

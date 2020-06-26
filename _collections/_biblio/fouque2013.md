@@ -1,4 +1,6 @@
 ---
+cat: gaia
+subcat: genetics
 author: A.-L. Fouque et al.
 title: Comparison of features for voxel-based analysis and classification of anatomical neuroimaging data
 year: 2013

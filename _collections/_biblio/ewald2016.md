@@ -1,4 +1,6 @@
 ---
+cat: gaia
+subcat: genetics
 author: A. Ewald et al.
 title: The role of the cannabinoid receptor in adolescents′ processing of facial expressions
 journal: European Journal of Neuroscience

@@ -5,7 +5,7 @@ permalink: /bibliography/other
 ---
 
 
-<h2> Publications of the {{site.title}} group </h2>
+<h2> Publications of the {{site.title}} unit </h2>
 
 {% assign today = site.time | date: '%Y' %}
 {% assign biblio_sorted = site.biblio | sort: 'year' | reverse %}
@@ -22,7 +22,8 @@ permalink: /bibliography/other
   {% for entry in biblio_sorted %}
     {% if entry.year == year %}
     <li>
-      <div class="text-justify">
+      <div class="text-justify {{entry.cat}} {{entry.subcat}}">
+        -
         {% if entry.journal %}
             {{entry.author}}: {{entry.title}}, {{entry.journal}} ({{entry.year}})
         {% elsif entry.booktitle %}

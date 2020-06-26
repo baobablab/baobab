@@ -1,4 +1,6 @@
 ---
+cat: gaia
+subcat: genetics
 author: S. Bartholdy et al.
 title: Identifying disordered eating behaviours in adolescents - how do parent and adolescent reports differ by sex and age?
 journal: European Child and Adolescent Psychiatry

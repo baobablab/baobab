@@ -1,4 +1,6 @@
 ---
+cat: gaia
+subcat: genetics
 author: E. Duchesnay et al.
 title: Multivariate prediction methods based on neuroimaging - Application to psychiatric disorders
 journal: Annales Medico-Psychologiques
