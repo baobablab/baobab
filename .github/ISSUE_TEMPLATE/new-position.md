@@ -11,11 +11,15 @@ assignees: ''
 - [X] PhD
 - [ ] Post Doc
 - [ ] Intern
+- [ ] CDD
+- [ ] CDI
 
 **Position Description**
 - Title:
 - Profile:
 - Contact:
+- Laboratory:
+- Team:
 - URL to the job full description (if applicable):
 
 **Do not forget**
