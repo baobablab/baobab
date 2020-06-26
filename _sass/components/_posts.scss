@@ -6,6 +6,10 @@
 
 /* Posts */
 
+    .dropdown-menu {
+        margin-bottom: 2em;
+    }
+
 	.posts {
 		$gutter: (_size(gutter) * 2);
 
@@ -13,6 +17,7 @@
 		@include vendor('flex-wrap', 'wrap');
 		margin: 0 0 _size(element-margin) ($gutter * -1);
 		width: calc(100% + #{$gutter});
+        padding-left: 2em;
 
 		article {
 			@include vendor('flex-grow', '0');

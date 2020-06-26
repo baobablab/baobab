@@ -1,54 +1,11 @@
 ---
-layout: page
+layout: page_select
 title:
 permalink: /people/
 ---
 
 {% assign people_sorted = site.people | sort: 'joined' %}
 {% assign people_array = "pi|postdoc|gradstudent|engineer|alumni" | split: "|" %}
-{% assign labs_sorted = site.labs | sort: "cat" %}
-{% assign unique_labs = '' | split: ',' %}
-{% for lab in labs_sorted %}
-  {% if lab.subcat == "team" %}
-      {% unless lab.cat == previous %}
-        {% assign key = "~" | append: lab.cat %}
-        {% assign unique_labs = unique_labs | push: key %}
-      {% endunless %}
-      {% assign unique_labs = unique_labs | push: lab.title %}
-      {% assign previous = lab.cat %}
-  {% endif %}
-{% endfor %}
-
-<script>
-$(document).ready(function() {
-    var content = "<option>Choose</option>"
-    {% for lab in unique_labs %}
-        {% if lab contains "~" %}
-            {% assign key = lab | replace: "~", "" %}
-            content += "<option value='{{key|downcase|replace: " ", "-"}}'>{{key|upcase}}</option>"
-        {% else %}
-            content += "<option value='{{lab|downcase|replace: " ", "-"}}'>&nbsp;&nbsp;&nbsp;&nbsp;{{lab|downcase}}</option>"
-        {% endif %}       
-    {% endfor %}
-    $(".dropdown-menu").html(content)
-    $(".dropdown-menu").change(function () {
-        var lab = this.value;
-        {% for lab in unique_labs %}
-            {% assign key = lab | replace: "~", "" %}
-            if (lab == "Choose") {
-                $(".{{key|downcase|replace: " ", "-"}}").show();
-            } else {
-                $(".{{key|downcase|replace: " ", "-"}}").hide();
-            } 
-        {% endfor %}
-        $("." + lab).show();
-    });
-});
-</script>
-
-<b> Filter by laboratories:</b>
-<select class="dropdown-menu">
-</select>
 
 {% for item in people_array %}
 

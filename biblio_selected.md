@@ -1,6 +1,6 @@
 ---
 title:
-layout: page
+layout: page_select
 permalink: /bibliography/selected
 ---
 

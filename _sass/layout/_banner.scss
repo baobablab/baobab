@@ -9,6 +9,7 @@
 	#banner {
 		@include padding(6em, 0);
 		@include vendor('display', 'flex');
+        border-bottom: solid 2px _palette(border);
 
 		h1 {
 			margin-top: -0.125em;

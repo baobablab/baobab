@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+{% include head.html %}
+
+{% assign labs_sorted = site.labs | sort: "cat" %}
+{% assign unique_labs = '' | split: ',' %}
+{% for lab in labs_sorted %}
+  {% if lab.subcat == "team" %}
+      {% unless lab.cat == previous %}
+        {% assign key = "~" | append: lab.cat %}
+        {% assign unique_labs = unique_labs | push: key %}
+      {% endunless %}
+      {% assign unique_labs = unique_labs | push: lab.title %}
+      {% assign previous = lab.cat %}
+  {% endif %}
+{% endfor %}
+
+<script>
+$(document).ready(function() {
+    var content = "<option>Choose</option>"
+    {% for lab in unique_labs %}
+        {% if lab contains "~" %}
+            {% assign key = lab | replace: "~", "" %}
+            content += "<option value='{{key|downcase|replace: " ", "-"}}'>{{key|upcase}}</option>"
+        {% else %}
+            content += "<option value='{{lab|downcase|replace: " ", "-"}}'>&nbsp;&nbsp;&nbsp;&nbsp;{{lab|downcase}}</option>"
+        {% endif %}       
+    {% endfor %}
+    $(".dropdown-menu").html(content)
+    $(".dropdown-menu").change(function () {
+        var lab = this.value;
+        {% for lab in unique_labs %}
+            {% assign key = lab | replace: "~", "" %}
+            if (lab == "Choose") {
+                $(".{{key|downcase|replace: " ", "-"}}").show();
+            } else {
+                $(".{{key|downcase|replace: " ", "-"}}").hide();
+            } 
+        {% endfor %}
+        $("." + lab).show();
+    });
+});
+</script>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                {% include header.html %}
+
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>{{ page.title }}</h1>
+                    </header>
+
+                    {% if page.image %}
+                        <span class="image main"><img src="{{ page.image | absolute_url }}" alt="" /></span>
+                    {% endif %}
+
+                    <b> Filter by laboratories:</b>
+                    <select class="dropdown-menu"></select>
+
+                    {{ content }}
+
+                </section>
+
+            </div>
+        </div>
+
+        {% include sidebar.html %}
+
+    </div>
+
+    {% include footer.html %}
+
+</body>
+
+</html>

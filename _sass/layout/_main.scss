@@ -18,7 +18,8 @@
 
 			> section {
 				@include padding(6em, 0);
-				border-top: solid 2px _palette(border);
+				//border-top: solid 2px _palette(border);
+                margin-top: 3em;
 
 				&:first-of-type {
 				 	border-top: 0 !important;
