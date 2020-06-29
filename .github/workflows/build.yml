@@ -25,7 +25,9 @@ jobs:
     - name: Make build destination directory
       run: mkdir $PWD/_site
     - name: Where am I
-      run: ls $PWD
+      run: |
+        echo $PWD
+        ls $PWD
       
     - name: Jekyll build
       run: docker run --rm -t --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=production jekyll/jekyll:3.8 jekyll build
@@ -36,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: Complied-Jekyll-Pages
-        path: $PWD/_site
+        path: home/runner/work/baobab/baobab/_site
