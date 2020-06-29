@@ -7,6 +7,7 @@
 
 {% assign key = page.url | split: "/" %}
 {% assign key = key[-1] %}
+{% assign key = key | replace: ".html", "" %}
 {% assign key = key | split: "-" %}
 {% assign lab = key[0] %}
 {% assign team = key[1] %}
