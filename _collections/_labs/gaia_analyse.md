@@ -8,7 +8,7 @@ teasing: In neurosciences or psychiatry, the emergence of large multi-center pop
 leader: Antoine Grigis
 icon: image.png
 added: 2020
-permalink: /cells/gaia-analyse
+permalink: cells/gaia-analyse.html
 ---
 
 ![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}

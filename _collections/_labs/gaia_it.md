@@ -8,7 +8,7 @@ teasing: Difficulty on insensible reasonable in. From as went he they. Preferenc
 leader: Pascal Stokowski
 icon: image.png
 added: 2020
-permalink: /cells/gaia-it
+permalink: cells/gaia-it.html
 ---
 
 ![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}

@@ -8,7 +8,7 @@ teasing: Difficulty on insensible reasonable in. From as went he they. Preferenc
 leader: Sébastien Mériaux
 icon: image.png
 added: 2020
-permalink: /cells/gaia-animal-facility
+permalink: cells/gaia-animal-facility.html
 ---
 
 ![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}

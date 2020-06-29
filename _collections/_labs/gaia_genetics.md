@@ -9,5 +9,5 @@ site: https://brainomics.org
 leader: Vincent Frouin
 icon: image.png
 added: 2020
-permalink: /teams/genetics
+permalink: teams/genetics.html
 ---

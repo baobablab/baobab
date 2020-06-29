@@ -8,7 +8,7 @@ teasing: Difficulty on insensible reasonable in. From as went he they. Preferenc
 leader: Denis Rivière
 icon: image.png
 added: 2020
-permalink: /teams/gaia-architecture
+permalink: teams/gaia-architecture.html
 ---
 
 ![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}
