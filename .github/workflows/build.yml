@@ -28,7 +28,9 @@ jobs:
       run: ls $PWD
       
     - name: Jekyll build
-      run: docker run --rm -it --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=production jekyll/jekyll:3.8 jekyll build
+      run: |
+        export COMPOSE_INTERACTIVE_NO_CLI=1
+        docker run --rm -it --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=production jekyll/jekyll:3.8 jekyll build
 
     - name: Upload built pages
       uses: actions/upload-artifact@v1.0.0
