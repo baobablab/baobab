@@ -1,4 +1,4 @@
-![Build Jekyll Site](https://github.com/baobablab/baobab/workflows/Build%20Jekyll%20Site/badge.svg)
+![Build Static Pages](https://github.com/baobablab/baobab/workflows/Build%20Static%20Pages/badge.svg)
 
 # Configuration
 
