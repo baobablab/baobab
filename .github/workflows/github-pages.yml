@@ -7,6 +7,8 @@ name: Build Jekyll Site
 on:
   push:
     branches: gh-pages
+  pull_request:
+    branches: gh-pages
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,22 +20,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Checkout source branch
-      uses: actions/checkout@v1
-      with:
-        ref: gh-pages
-        fetch-depth: 10
+      uses: actions/checkout@v2
       
     - name: Make build destination directory
-      run: mkdir -vp ~/www/baobab-site
+      run: mkdir $PWD/_site
+    - name: Where am I
+      run: ls $PWD
       
     - name: Jekyll build
-      uses: gha-utilities/jekyll-build@v0.0.4
-      with:
-        source: ./
-        destination: ~/www/baobab-site
+      run: docker run --rm -it --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=production jekyll/jekyll:3.8 jekyll build
 
     - name: Upload built pages
       uses: actions/upload-artifact@v1.0.0
       with:
         name: Complied-Jekyll-Pages
-        path: ~/www/baobab-site
+        path: $PWD/_site
