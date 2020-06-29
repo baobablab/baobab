@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: Complied-Jekyll-Pages
-        path: home/runner/work/baobab/baobab/_site
+        path: _site
