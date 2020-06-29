@@ -1,3 +1,5 @@
+![Build Jekyll Site](https://github.com/baobablab/baobab/workflows/Build%20Jekyll%20Site/badge.svg)
+
 
 # Configuration
 
