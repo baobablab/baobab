@@ -37,5 +37,5 @@ jobs:
     - name: Upload built pages
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: Complied-Jekyll-Pages
+        name: baobab-site
         path: _site
