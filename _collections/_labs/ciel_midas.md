@@ -8,6 +8,7 @@ teasing: Difficulty on insensible reasonable in. From as went he they. Preferenc
 leader: Benoit Larrat
 icon: image.png
 added: 2020
+permalink: /teams/ciel-midas
 ---
 
 ![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}

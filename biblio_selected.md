@@ -1,7 +1,7 @@
 ---
 title:
 layout: page_select
-permalink: /bibliography/selected
+permalink: /bibliography/bestof
 ---
 
 <h2> Selected publications of the {{site.title}} unit </h2>

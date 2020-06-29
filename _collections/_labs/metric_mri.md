@@ -8,6 +8,7 @@ teasing: Difficulty on insensible reasonable in. From as went he they. Preferenc
 leader: Alexandre Vignaud
 icon: image.png
 added: 2020
+permalink: /cells/metric-mri
 ---
 
 {% assign research_sorted = site.research | where: "cat", "metric" | where: "subcat", "mri" | sort: "added" | reverse  %}

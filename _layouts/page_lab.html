@@ -53,7 +53,7 @@
                             {% else %}
                                 <a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{team.icon}}" alt="" /></a>
                             {% endif %}
-                            <h3>{{ team.title }}</h3>
+                            <h3>{{ team.title }}: {{team.headline}}</h3>
                             <p>
                                 <b>Leader: </b>
                                 <script>mail2("{{team.leader | replace: " ", "." | downcase}}",
@@ -87,7 +87,7 @@
                         {% for cell in cells_sorted %}
                           <article>
                             <a href="{{site.url}}/{{site.baseurl}}/{{cell.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{cell.icon}}" alt="" /></a>
-                            <h3>{{ cell.title }}</h3>
+                            <h3>{{ cell.title }}: {{cell.headline}}</h3>
                             <p>
                                 <b>Leader: </b>
                                 <script>mail2("{{cell.leader | replace: " ", "." | downcase}}",

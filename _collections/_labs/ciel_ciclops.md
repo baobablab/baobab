@@ -8,6 +8,7 @@ teasing: Difficulty on insensible reasonable in. From as went he they. Preferenc
 leader: Fawzi Boumezbeur
 icon: image.png
 added: 2020
+permalink: /teams/ciel-ciclops
 ---
 
 ![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}

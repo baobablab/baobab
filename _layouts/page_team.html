@@ -6,8 +6,8 @@
 -->
 
 {% assign key = page.url | split: "/" %}
-{% assign key = key[-2] %}
-{% assign key = key | split: "_" %}
+{% assign key = key[-1] %}
+{% assign key = key | split: "-" %}
 {% assign lab = key[0] %}
 {% assign team = key[1] %}
 {% assign research_sorted = site.research | where: "cat", lab | where: "subcat", team | sort: "added" | reverse  %}
@@ -47,7 +47,7 @@
                         {% for research in research_sorted limit: 6 %}
                           <article>
                             <a class="image"><img src="{{site.url}}/{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
-                            <h3>{{ research.title }}</h3>
+                            <h3>{{ research.title }}</h3>: {{research.headline}}
                             <p>{{ research.teasing }}...</p>
                           </article>
                         {% endfor %}
