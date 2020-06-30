@@ -2,7 +2,7 @@
 # Site settings
 title: BAOBAB
 subtitle: Team slogan
-baseurl: #baobab/
+baseurl: / #baobab/
 url:  #https://baobablab.github.io/
 
 # Contacts
