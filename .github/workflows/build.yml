@@ -35,7 +35,9 @@ jobs:
         COMPOSE_INTERACTIVE_NO_CLI: 1
 
     - name: Change domain
-      run: find _site -name "*.html" -type f -exec sed -i "s/https:\/\/baobablab.github.io\/baobab/http:\/\/baobab.cnrs.fr/g" {} \;
+      run: |
+        find . -name "*.html" -type f -exec sed -i "s/\/\//\//g" {} \;
+        find _site -name "*.html" -type f -exec sed -i "s/https:\/\/baobablab.github.io\/baobab/http:\/\/baobab.cnrs.fr/g" {} \;
         
     - name: Upload built pages
       uses: actions/upload-artifact@v1.0.0
