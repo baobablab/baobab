@@ -18,7 +18,7 @@ layout: default
     <div class="posts">
     {% for lab in labs_sorted %}
       <article>
-        <a href="{{site.url}}{{site.baseurl}}{{lab.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}images/labs/{{lab.icon}}" alt="" /></a>
+        <a href="{{site.url}}{{site.baseurl}}/{{lab.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}/images/labs/{{lab.icon}}" alt="" /></a>
         <h3>{{ lab.title }}</h3>
         <p>
             <b>Leader: </b>
@@ -28,7 +28,7 @@ layout: default
 
         <p>{{ lab.teasing }}...</p>
         <ul class="actions">
-            <li><a href="{{site.url}}{{site.baseurl}}{{lab.url}}" class="button medium">More</a></li>
+            <li><a href="{{site.url}}{{site.baseurl}}/{{lab.url}}" class="button medium">More</a></li>
         </ul>
       </article>
     {% endfor %}
@@ -43,7 +43,7 @@ layout: default
     <div class="posts">
     {% for research in research_sorted limit: 6 %}
       <article>
-        <a class="image"><img src="{{site.url}}{{site.baseurl}}images/research/{{research.icon}}" alt="" /></a>
+        <a class="image"><img src="{{site.url}}{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
         <h3>{{ research.title }}</h3>
         <p>{{ research.teasing }}...</p>
       </article>

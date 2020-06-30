@@ -24,20 +24,20 @@
               <span class="opener">Laboratories</span>
               <ul>
                 {% for cat in unique_cats %}
-                  <li><a href="{{site.url}}{{site.baseurl}}labs/{{cat}}">{{cat}}</a></li>
+                  <li><a href="{{site.url}}{{site.baseurl}}/labs/{{cat}}">{{cat}}</a></li>
                 {% endfor %}
               </ul>
             </li>
             <li>
               <span class="opener">Publications</span>
               <ul>
-                <li><a href="{{site.url}}{{site.baseurl}}bibliography/bestof">Selection</a></li>
-                <li><a href="{{site.url}}{{site.baseurl}}bibliography">Present-{{year}}</a></li>
+                <li><a href="{{site.url}}{{site.baseurl}}/bibliography/bestof">Selection</a></li>
+                <li><a href="{{site.url}}{{site.baseurl}}/bibliography">Present-{{year}}</a></li>
               </ul>
             </li>
-            <li><a href="{{site.url}}{{site.baseurl}}people">Members</a></li>
-            <li><a href="{{site.url}}{{site.baseurl}}collaborators">Collaborators</a></li>
-            <li><a href="{{site.url}}{{site.baseurl}}opportunities">Opportunities</a></li>
+            <li><a href="{{site.url}}{{site.baseurl}}/people">Members</a></li>
+            <li><a href="{{site.url}}{{site.baseurl}}/collaborators">Collaborators</a></li>
+            <li><a href="{{site.url}}{{site.baseurl}}/opportunities">Opportunities</a></li>
           </ul>
         </nav>
 
@@ -58,7 +58,7 @@
                   {% if news.ext_url %}
 			        <li><a href="{{news.ext_url}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% elsif news.page %}
-			        <li><a href="{{site.url}}{{site.baseurl}}{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
+			        <li><a href="{{site.url}}{{site.baseurl}}/{{news.page}}">{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% else %}
 			        <li><a>{{news.date | date: '%B %d, %Y'}}: {{news.title}}</a></li>
                   {% endif %}
@@ -69,7 +69,7 @@
 
         <!-- Footer -->
         <footer id="footer">
-          <p class="copyright"><a href="{{site.url}}{{site.baseurl}}mentionslegales">Legal disclaimer</a></p>
+          <p class="copyright"><a href="{{site.url}}{{site.baseurl}}/mentionslegales">Legal disclaimer</a></p>
           <p class="copyright">Generated on {{ site.time | split: " " | first }}<p>
         </footer>
 
