@@ -40,7 +40,7 @@ permalink: /people/
         {% if profile.avatar %}
             <img width="200" src="{{site.url}}{{site.baseurl}}images/people/{{profile.avatar}}"></a>
         {% else %}
-            <img width="200" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg"></a>
+            <img width="200" src="{{site.url}}{{site.baseurl}}images/people/default.png"></a>
         {% endif %}
         {% if profile.site %}
             <a class="name" href="{{ profile.site }}">{{ profile.name }}</a>
