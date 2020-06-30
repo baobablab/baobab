@@ -10,7 +10,7 @@ icon: image.png
 added: 2020
 ---
 
-![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}
+![image-title-here]({{site.url}}{{site.baseurl}}images/labs/{{page.icon}}){:class="center"}
 
 <b> Leader: </b>
 <script>mail2("{{page.leader | replace: " ", "." | downcase}}", "cea", 3, "", "{{page.leader}}")</script>

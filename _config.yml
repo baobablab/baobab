@@ -2,8 +2,8 @@
 # Site settings
 title: BAOBAB
 subtitle: Team slogan
-baseurl: #baobab
-url: #https://baobablab.github.io
+baseurl: #baobab/
+url:  #https://baobablab.github.io/
 
 # Contacts
 email: jean-francois.mangin@cea.fr

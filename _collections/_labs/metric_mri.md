@@ -13,7 +13,7 @@ permalink: cells/metric-mri.html
 
 {% assign research_sorted = site.research | where: "cat", "metric" | where: "subcat", "mri" | sort: "added" | reverse  %}
 
-![image-title-here]({{site.url}}/{{site.baseurl}}/images/labs/{{page.icon}}){:class="center"}
+![image-title-here]({{site.url}}{{site.baseurl}}images/labs/{{page.icon}}){:class="center"}
 
 <b> Leader: </b>
 <script>mail2("{{page.leader | replace: " ", "." | downcase}}", "cea", 3, "", "{{page.leader}}")</script>
@@ -27,7 +27,7 @@ Difficulty on insensible reasonable in. From as went he they. Preference themsel
     <div class="posts">
     {% for research in research_sorted limit: 6 %}
       <article>
-        <a href="{{site.url}}/{{site.baseurl}}/{{research.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/research/{{research.icon}}" alt="" /></a>
+        <a href="{{site.url}}{{site.baseurl}}{{research.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}images/research/{{research.icon}}" alt="" /></a>
         <h3>{{ research.title }}</h3>
         <p>{{ research.teasing }}...</p>
       </article>

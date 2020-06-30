@@ -49,9 +49,9 @@
                         {% for team in teams_sorted %}
                           <article>
                             {% if team.site %}
-                                <a href="{{team.site}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{team.icon}}" alt="" /></a>
+                                <a href="{{team.site}}" class="image"><img src="{{site.url}}{{site.baseurl}}images/labs/{{team.icon}}" alt="" /></a>
                             {% else %}
-                                <a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{team.icon}}" alt="" /></a>
+                                <a href="{{site.url}}{{site.baseurl}}{{team.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}images/labs/{{team.icon}}" alt="" /></a>
                             {% endif %}
                             <h3>{{ team.title }}: {{team.headline}}</h3>
                             <p>
@@ -65,7 +65,7 @@
                                 {% if team.site %}
                                     <li><a href="{{team.site}}" class="button medium">More</a></li>
                                 {% else %}
-                                    <li><a href="{{site.url}}/{{site.baseurl}}/{{team.url}}" class="button medium">More</a></li>
+                                    <li><a href="{{site.url}}{{site.baseurl}}{{team.url}}" class="button medium">More</a></li>
                                 {% endif %}
                             </ul>
                           </article>
@@ -86,7 +86,7 @@
                         <div class="posts">
                         {% for cell in cells_sorted %}
                           <article>
-                            <a href="{{site.url}}/{{site.baseurl}}/{{cell.url}}" class="image"><img src="{{site.url}}/{{site.baseurl}}/images/labs/{{cell.icon}}" alt="" /></a>
+                            <a href="{{site.url}}{{site.baseurl}}{{cell.url}}" class="image"><img src="{{site.url}}{{site.baseurl}}images/labs/{{cell.icon}}" alt="" /></a>
                             <h3>{{ cell.title }}: {{cell.headline}}</h3>
                             <p>
                                 <b>Leader: </b>
@@ -96,7 +96,7 @@
 
                             <p>{{ cell.teasing }}...</p>
                             <ul class="actions">
-                                <li><a href="{{site.url}}/{{site.baseurl}}/{{cell.url}}" class="button medium">More</a></li>
+                                <li><a href="{{site.url}}{{site.baseurl}}{{cell.url}}" class="button medium">More</a></li>
                             </ul>
                           </article>
                         {% endfor %}

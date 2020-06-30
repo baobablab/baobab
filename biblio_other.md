@@ -1,7 +1,7 @@
 ---
 title:
 layout: page_select
-permalink: /bibliography
+permalink: /bibliography.html
 ---
 
 

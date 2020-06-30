@@ -33,19 +33,19 @@ permalink: /people/
         {% if profile.site %}
             <a href="{{ profile.site }}">
         {% elsif profile.page %}
-            <a href="{{site.url}}/{{site.baseurl}}/{{ profile.url }}">
+            <a href="{{site.url}}{{site.baseurl}}{{ profile.url }}">
         {% else %}
             <a>
         {% endif %}
         {% if profile.avatar %}
-            <img width="200" src="{{site.url}}/{{site.baseurl}}/images/people/{{profile.avatar}}"></a>
+            <img width="200" src="{{site.url}}{{site.baseurl}}images/people/{{profile.avatar}}"></a>
         {% else %}
             <img width="200" src="http://evansheline.com/wp-content/uploads/2011/02/facebook-Storm-Trooper.jpg"></a>
         {% endif %}
         {% if profile.site %}
             <a class="name" href="{{ profile.site }}">{{ profile.name }}</a>
         {% elsif profile.page %}
-            <a class="name" href="{{site.url}}/{{site.baseurl}}/{{ profile.url }}">{{ profile.name }}</a>
+            <a class="name" href="{{site.url}}{{site.baseurl}}{{ profile.url }}">{{ profile.name }}</a>
         {% else %}
             <a class="name">{{ profile.name }}</a>
         {% endif %}
