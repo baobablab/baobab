@@ -87,14 +87,14 @@
 				$sidebar_inner = $sidebar.children('.inner');
 
 			// Inactive by default on <= large.
-				skel
+			/*	skel
 					.on('+large', function() {
 						$sidebar.addClass('inactive');
 					})
 					.on('-large !large', function() {
                         $sidebar.addClass('inactive');
 						//$sidebar.removeClass('inactive');
-					});
+					});  */
 
 			// Hack: Workaround for Chrome/Android scrollbar position bug.
 				if (skel.vars.os == 'android'
