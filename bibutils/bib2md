@@ -8,6 +8,7 @@
 
 
 # Imports
+from pprint import pprint
 import os
 import argparse
 import subprocess
@@ -17,7 +18,7 @@ import yaml
 doc = """
 Convert BIBTEX to MD.
 Must install first pybtex.
-python bib2md -i test.bib -o out
+python bib2md -i test.bib -o out -c gaia -s genetics
 """
 parser = argparse.ArgumentParser(description=doc)
 parser.add_argument(
@@ -26,6 +27,12 @@ parser.add_argument(
 parser.add_argument(
     "-o", "--outdir",
     help="the destination folder.")
+parser.add_argument(
+    "-c", "--cat",
+    help="the category.")
+parser.add_argument(
+    "-s", "--subcat",
+    help="the category.")
 args = parser.parse_args()
 
 
@@ -42,12 +49,15 @@ with open(bibfile, "rt") as of:
 
 # Create single entries
 for key, item in biblio.items():
+    print("--", key)
+    # pprint(item)
     key = key.replace(os.sep, "_")
-    item["author"] = "{0} {1} et al.".format(
+    item["author"] = u"{0} {1} et al.".format(
         item["author"][0]["first"],
         item["author"][0]["last"])
     md_file = os.path.join(args.outdir, key + ".md")
-    content = ["---"]
+    content = [u"---", u"cat: {0}".format(args.cat),
+               u"subcat: {0}".format(args.subcat), u"bestof: false"]
     for _key in ["author", "title", "journal", "year", "type", "url", "doi",
                  "booktitle", "team"]:
         value = item.get(_key, None)
@@ -57,8 +67,9 @@ for key, item in biblio.items():
             value = value.replace(char, "")
         for char in (":", ):
             value = value.replace(char, " -")
-        content.append("{0}: {1}".format(_key, value))
-    content += ["---"]
+        content.append(u"{0}: {1}".format(_key, value))
+    content += [u"---"]
+    print(content)
     with open(md_file, "wt") as of:
-        of.write("\n".join(content))
+        of.write(u"\n".join(content).encode("utf8"))
     
