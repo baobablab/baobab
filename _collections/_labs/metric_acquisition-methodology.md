@@ -6,7 +6,7 @@ subcat: team
 headline: MRI
 teasing: Improvement of image quality and contrast in the context of applications for neuroscience and clinical applications at very high magnetic fields. This includes work on radio frequency pulses in parallel transmission, motion correction, field monitoring, anatomic, quantification, metabolic and BOLD imaging.
 leader: Nicolas Boulant
-icon: metric_acquisition_methodology.png
+icon: image.png
 added: 2020
 permalink: teams/metric-acquisition-methodology.html
 ---
