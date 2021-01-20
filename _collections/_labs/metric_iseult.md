@@ -4,7 +4,7 @@ title: ISEULT
 cat: metric
 subcat: team
 headline: 11.7T MRI
-teasing: (i) Management of the commissioning of the ISEULT MRI, maintenance and upgrade of the ISEULT MRI scanner. It includes the magnet with its cryogenic power plant and the supervision system (in collaboration with IRFU) of the imaging equipment (in collaboration with Siemens Healthineers). (ii) Obtaining and monitoring regulatory authorizations for CEA employees and participants in imaging studies (in collaboration with UNIACT). (iii) Involvement in setting up a network of international collaborations.
+teasing: Managing the maintenance and scalability of the 11.7T Clinical MRI (with IRFU and Siemens Healthineers), obtaining authorizations from the competent authorities for employees, healthy volunteers and patients involved in the activities of this MRI (with UNIACT), and participating in the reception of the international teams that will collaborate with NeuroSpin on this imager. The 11.7T Magnet Maintenance Unit is part of the Exploitation Iseult group and aims to ensure the maximum availability of the 11.7T Iseult magnet for research activities, by carrying out preventive and corrective maintenance of the various equipment required for its operation (cryogenic plant, power supplies, instrumentation), by coordinating and participating in on-call duty, and by contributing to its upgradability. These missions are carried out in collaboration with Irfu experts.
 leader: Cecile Lerman
 icon: metric_instrumentation.png
 added: 2020
@@ -16,6 +16,8 @@ permalink: teams/metric-iseult.html
 <b> Leader: </b>
 <script>mail2("{{page.leader | replace: " ", "." | downcase}}", "cea", 3, "", "{{page.leader}}")</script>
 
-Goals: (i) Management of the commissioning of the ISEULT MRI, maintenance and upgrade of the ISEULT MRI scanner. It includes the magnet with its cryogenic power plant and the supervision system (in collaboration with IRFU) of the imaging equipment (in collaboration with Siemens Healthineers). (ii) Obtaining and monitoring regulatory authorizations for CEA employees and participants in imaging studies (in collaboration with UNIACT). (iii) Involvement in setting up a network of international collaborations.
+Goals: Managing the maintenance and scalability of the 11.7T Clinical MRI (with IRFU and Siemens Healthineers), obtaining authorizations from the competent authorities for employees, healthy volunteers and patients involved in the activities of this MRI (with UNIACT), and participating in the reception of the international teams that will collaborate with NeuroSpin on this imager.
+ 
+The 11.7T Magnet Maintenance Unit is part of the Exploitation Iseult group and aims to ensure the maximum availability of the 11.7T Iseult magnet for research activities, by carrying out preventive and corrective maintenance of the various equipment required for its operation (cryogenic plant, power supplies, instrumentation), by coordinating and participating in on-call duty, and by contributing to its upgradability. These missions are carried out in collaboration with Irfu experts. 
 
 Staff: Frédéric Leprêtre, Cédric Bonnelye, Vincent Jannot (IRFU).
