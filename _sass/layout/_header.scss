@@ -41,10 +41,10 @@
 			}
 
 			.icons {
-				height: (6.25em / 1.25);
-				line-height: (6.25em / 1.25);
+				height: calc(6.25em / 1.25);
+				line-height: calc(6.25em / 1.25);
 				position: absolute;
-				right: (-0.625em / 1.25);
+				right: calc(-0.625em / 1.25);
 				top: 0;
 			}
 		}
